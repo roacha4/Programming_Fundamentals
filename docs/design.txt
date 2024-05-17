@@ -1,0 +1,118 @@
+Problem Statement: Create a program that prompts a user to input two letters that represent
+each allele of a genotype. These letters should be B, b, and G. They are the eye color alleles for brown, blue,
+and green. (Brown is dominant, Blue is recessive, and Green is dominant to Blue but recessive
+to Brown). The program should create a genotype from the two inputted alleles and output the phenotype,
+or the color that is physicaly represented by the genotype.
+
+Nouns: letters, allele, genotype, phenotype
+
+Verbs: input, create, output
+
+// Defining Diagram //
+
+Input: allele
+
+Process:
+  prompt user for the first letter for an allele
+  prompt user for a second letter for an allele
+  if the letter is not B, b, or G, alert the user to try again
+  genotype is first letter plus second letter
+  use switch statment to determine phenotype based on letter combinations
+  display genotype
+  display phenotype
+
+Output:
+  genotype combination
+  phenotype color
+
+// Pseudocode //
+
+GenerateEyeColor 
+  initialize variables
+  prompt user for firstAllele with "What allele does the first parent give? B, b, or G?" 
+  WHILE input is not 'B', 'G', or 'b'
+    alert ""Invalid input! Please enter B, b, or G. Case sensitivity required"
+  prompt user for secondAllele with "What allele does the second parent give? B, b, or G?"
+  WHILE input is not 'B', 'G', or 'b'
+    alert "Invalid input! Please enter B, b, or G. Case sensitivity required"
+  set genotype to firstAllele + second Allele 
+  IF genotype = bb
+    THEN phenotype = blue
+  IF genotype = bB
+    THEN phenotype = Brown
+  IF genotype = bG
+    THEN phenotype = Green
+  IF genotype = BB
+    THEN phenotype = Brown
+  IF genotype = Bb
+    THEN phenotype = Brown
+  IF genotype = BG
+    THEN phenotype = Brown
+  IF genotype = GG
+    THEN phenotype = Green
+  IF genotype = GB
+    THEN phenotype = Brown
+  IF genotype = Gb
+    THEN phenotype = Green
+    ELSE phenotype = null
+  ENDIF
+  display genotype as "The genotype for eyecolor is " + firstAllele + secondAllele
+  display phenotype as "The phenotype for eyecolor is " + phenotype
+END
+  
+// Testing //
+
+Variables: firstAllele, secondAllele
+
+TEST CASE 1:
+
+Input: b, b
+
+Expected Output:
+  The genotype for your eye color is bb.
+  The phenotype for your eye color is Blue. 
+
+Actual Output:
+  The genotype for your eye color is bb.
+  The phenotype for your eye color is Blue.
+
+
+
+TEST CASE 2:
+
+Input: B, b
+
+Expected Output:
+  The genotype for your eye color is Bb.
+  The phenotype for your eye color is Brown.  
+
+Actual Output:
+  The genotype for your eye color is Bb.
+  The phenotype for your eye color is Brown.
+
+
+
+TEST CASE 3:
+
+Input: G, G
+
+Expected Output:
+  The genotype for your eye color is GG.
+  The phenotype for your eye color is Green.
+
+Actual Output:
+  The genotype for your eye color is GG.
+  The phenotype for your eye color is Green.
+
+
+
+
+TEST CASE 4:
+
+Input: G, g
+
+Expected Output: 
+  Invalid input! Please enter B, b, or G. Case sensitivity required
+
+Actual Output:
+  Invalid input! Please enter B, b, or G. Case sensitivity required
